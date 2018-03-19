@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import Appbar from 'muicss/lib/react/appbar'
-import Button from 'muicss/lib/react/button'
-import Container from 'muicss/lib/react/container'
+import { Appbar, Container, Tabs, Tab } from 'muicss/react'
 import Logo from './components/Logo.js'
 import './App.scss'
-import colors from './styles/__colors.scss'
-console.log(colors)
 
 class App extends Component {
   constructor (props) {
@@ -18,10 +14,13 @@ class App extends Component {
       <div>
         <Appbar>
           <Logo />
-          <div className='mui--text-display3 mui--appbar-height' style={{display: 'inline-block'}}>Geomancy</div>
+          <div className='app-title'>Geomancy</div>
         </Appbar>
         <Container>
-          <Button color='primary'>button</Button>
+          <Tabs defaultSelectedIndex={0} justified>
+            <Tab label='Generate'>I'm the generate tab</Tab>
+            <Tab label='Manual'>You can input numbers manually here</Tab>
+          </Tabs>
         </Container>
       </div>
     )
