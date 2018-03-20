@@ -9,7 +9,7 @@ export default [
     planet: 'Moon',
     weekday: 'Monday',
     meaning: 'Journeys, action, forward movement. Lonliness, slowness or delay. Unfavourable unless travel or progress.',
-    binary: 0b0000
+    binary: 0b1111
   },
   {
     name: 'Populus',
@@ -21,7 +21,7 @@ export default [
     planet: 'Moon',
     weekday: 'Monday',
     meaning: 'Family, friends, group involvement. Outcome depends on others. Messages and news, environment around us. Going with the flow.',
-    binary: 0b1111
+    binary: 0b0000
   },
   {
     name: 'Conjunctio',
@@ -33,7 +33,7 @@ export default [
     planet: 'Mercury',
     weekday: 'Wednesday',
     meaning: 'Love, friendship, sexual attraction, contracts, agreements and partnerships. Combination of forces for good or bad. Recovery of lost objects.',
-    binary: 0b1001
+    binary: 0b0110
   },
   {
     name: 'Carcer',
@@ -45,7 +45,7 @@ export default [
     planet: 'Saturn',
     weekday: 'Saturday',
     meaning: 'Isolation. Limitations, restrictions, delays, and reversals of fortune. Good for contracts et al. Mostly unfavourable unless stability or security is needed.',
-    binary: 0b0110
+    binary: 0b1001
   },
   {
     name: 'Fortuna Major',
@@ -57,7 +57,7 @@ export default [
     planet: 'Sun',
     weekday: 'Sunday',
     meaning: 'Power. Success, good luck, great fortune, celebration. Honour and respect.',
-    binary: 0b1100
+    binary: 0b0011
   },
   {
     name: 'Fortuna Minor',
@@ -69,7 +69,7 @@ export default [
     planet: 'Sun',
     weekday: 'Sunday',
     meaning: 'Swiftness. Smaller good fortune, assistance from others, influence, protection from misfortune and harm. Abuse of power. Success only comes with hard work.',
-    binary: 0b0011
+    binary: 0b1100
   },
   {
     name: 'Acquisitio',
@@ -81,7 +81,7 @@ export default [
     planet: 'Jupiter',
     weekday: 'Thursday',
     meaning: 'Prosperity, promotion, gain from business or extension of existing property. Wordly success. Success is within your grasp, your difficulties are now behind you.',
-    binary: 0b1010
+    binary: 0b0101
   },
   {
     name: 'Amissio',
@@ -92,8 +92,8 @@ export default [
     sign: 'Taurus',
     planet: 'Venus',
     weekday: 'Wednesday',
-    meaning: 'Loss of money, sometimes of love. Loss, illness, theft, financial problems. Unfavourable for all except where loss id desireable.',
-    binary: 0b0101
+    meaning: 'Loss of money, sometimes of love. Loss, illness, theft, financial problems. Unfavourable for all except where loss is desireable.',
+    binary: 0b1010
   },
   {
     name: 'Laetitia',
@@ -105,7 +105,7 @@ export default [
     planet: 'Jupiter',
     weekday: 'Thursday',
     meaning: 'Joy, laughter, happiness, good luck, good health, beauty, harmony, and peace of mind. Favourable for almost everything. A secret is revealed. Agreement.',
-    binary: 0b0111
+    binary: 0b1000
   },
   {
     name: 'Tristitia',
@@ -117,7 +117,7 @@ export default [
     planet: 'Saturn',
     weekday: 'Saturday',
     meaning: 'Unexpected disappointment, sadness, loneliness, change for the worse. Loss and destruction of something that has been carefully built up. Illness and Pain. Unfavourable in all issues except building and The Earth. A secret is kept.',
-    binary: 0b1000
+    binary: 0b0111
   },
   {
     name: 'Albus',
@@ -129,7 +129,7 @@ export default [
     planet: 'Mercury',
     weekday: 'Friday',
     meaning: 'Peace, wisdom, good business results through moderation and careful decisions. Spiritual growth and harmony. Patience and thoughtfulness. Good for beginnings and profit. Favourable but weak.',
-    binary: 0b1101
+    binary: 0b0010
   },
   {
     name: 'Rubeus',
@@ -141,7 +141,7 @@ export default [
     planet: 'Mars',
     weekday: 'Teusday',
     meaning: 'Passion, vice, sexuality. A warning for caution and a need for retreat. Negativity and upheaval. Listen to your inner voice for the correct path. Good in all that is evil, evil in all that is good.',
-    binary: 0b1011
+    binary: 0b0100
   },
   {
     name: 'Puella',
@@ -153,7 +153,7 @@ export default [
     planet: 'Venus',
     weekday: 'Friday',
     meaning: 'Harmony. Women, purity, cleanliness, external appearances including superficiality, indecisiveness, and fickleness. Good relationships with women. Healing and nurturing. Music and the arts.',
-    binary: 0b0100
+    binary: 0b1011
   },
   {
     name: 'Puer',
@@ -165,7 +165,7 @@ export default [
     planet: 'Mars',
     weekday: 'Tuesday',
     meaning: 'Strife. Rashness, combativeness, violence. Good for love and war, bad for other matters. Energy that must be harnessed. Leadership and impulsiveness.',
-    binary: 0b0010
+    binary: 0b1101
   },
   {
     name: 'Caput Draconis',
@@ -177,7 +177,7 @@ export default [
     planet: 'North Node of Moon',
     weekday: 'Thursday',
     meaning: 'Beginning. A place of entry. New starts, birth and innocence. Alertness and shrewdness. Profit. A mix of favourable and unfavourable. Introversion and mysticism.',
-    binary: 0b1000
+    binary: 0b0111
   },
   {
     name: 'Cauda Draconis',
@@ -189,6 +189,6 @@ export default [
     planet: 'South Node of Moon',
     weekday: 'Saturday',
     meaning: 'Ending. A way out. Bad luck, downward path, death and endings. Evil. Walk away and start anew. Good in all that is evil, evil in all that is good. Illusion, fraud, and deception.',
-    binary: 0b0001
+    binary: 0b1110
   }
 ]
