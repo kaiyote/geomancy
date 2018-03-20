@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { Appbar, Container, Tabs, Tab } from 'muicss/react'
 import Logo from './components/Logo.js'
+import Manual from './components/Manual.js'
 import './App.scss'
 
-class App extends Component {
+export default class App extends Component {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      points: []
+    }
   }
 
   render () {
@@ -17,14 +20,24 @@ class App extends Component {
           <div className='app-title'>Geomancy</div>
         </Appbar>
         <Container>
-          <Tabs defaultSelectedIndex={0} justified>
-            <Tab label='Generate'>I'm the generate tab</Tab>
-            <Tab label='Manual'>You can input numbers manually here</Tab>
-          </Tabs>
+          {this.state.points.length > 0 ? this.resultsView() : this.generationTabs()}
         </Container>
       </div>
     )
   }
-}
 
-export default App
+  generationTabs () {
+    return (
+      <Tabs defaultSelectedIndex={1} justified>
+        <Tab label='Generate'>I'm the generate tab</Tab>
+        <Tab label='Manual'><Manual /></Tab>
+      </Tabs>
+    )
+  }
+
+  resultsView () {
+    return (
+      <div>I AM RESULTS</div>
+    )
+  }
+}
