@@ -25,19 +25,51 @@
 .figure {
   padding: 1em 15px;
   border: 1px solid $mui-primary-color;
-}
-
-.figure-row {
   text-align: center;
   line-height: .9em;
+  background-color: white;
 
   span {
     margin: 0 5px;
+  }
+
+  &.daughter:first-child {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%)
+  }
+
+  &.mother:last-child {
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%)
+  }
+
+  &.niece:first-child {
+    clip-path: polygon(12.5% 0, 100% 0, 100% 100%, 37% 100%)
+  }
+
+  &.niece:last-child {
+    clip-path: polygon(0 0, 87.5% 0, 63% 100%, 0 100%)
+  }
+
+  &.witness:first-child {
+    clip-path: polygon(18.5% 0, 100% 0, 100% 100%, 40% 100%);
+  }
+
+  &.witness:last-child {
+    clip-path: polygon(0 0, 81.5% 0, 60% 100%, 0 100%);
+  }
+
+  &.judge {
+    clip-path: polygon(10% 0, 35% 100%, 65% 100%, 90% 0);
+  }
+
+  &.reconciler {
+    color: grey;
   }
 }
 
 .chart {
   margin: 1em;
+  background-color: $mui-primary-color;
+  clip-path: polygon(15.4% 0, 17.5% 25%, 21.7% 50%, 29.1% 75%, 41.9% 100%, 59.7% 100%, 72.6% 75%, 84.3% 75%, 84.3% 100%, 94.8% 100%, 94.8% 75%, 72.6% 75%, 80% 50%, 84.2% 25%, 86.3% 0);
 }
 
 .final-court {

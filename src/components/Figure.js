@@ -3,12 +3,12 @@ import React from 'react'
 
 export default function Figure (props) {
   return (
-    <div className={props.className}>
+    <React.Fragment>
       <FigureRow val={(props.figure >> 3) & 1} />
       <FigureRow val={(props.figure >> 2) & 1} />
       <FigureRow val={(props.figure >> 1) & 1} />
       <FigureRow val={props.figure & 1} />
-    </div>
+    </React.Fragment>
   )
 }
 
