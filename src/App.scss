@@ -1,7 +1,7 @@
 @import './styles/__colors', 'mui';
 
 .app-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: app-logo-spin infinite 20s linear;
   margin: 7px 5px 0 5px;
   height: 45px;
   display: inline-block;
@@ -17,7 +17,37 @@
   display: inline-block;
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.figure {
+  padding: 1em 15px;
+  border: 1px solid $mui-primary-color;
+}
+
+.figure-row {
+  text-align: center;
+  line-height: .9em;
+
+  span {
+    margin: 0 5px;
+  }
+}
+
+.chart {
+  margin: 1em;
+}
+
+.final-court {
+  border: 1px solid $mui-primary-color;
+
+  .figure {
+    border: none;
+  }
+
+  & > div:nth-child(2) {
+    color: grey;
+  }
 }

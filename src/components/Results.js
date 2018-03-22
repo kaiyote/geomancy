@@ -24,7 +24,12 @@ export default class Results extends Component {
     return (
       <Tabs defaultSelectedIndex={0} justified>
         <Tab label='Shield Chart'>
-          <ShieldChart mothers={this.state.mothers} daughters={this.state.daughters} />
+          <ShieldChart mothers={this.state.mothers}
+            daughters={this.state.daughters}
+            nieces={this.state.nieces}
+            witnesses={this.state.witnesses}
+            judge={this.state.judge} reconciler={this.state.reconciler}
+            quesited={this.props.quesited} />
         </Tab>
         <Tab label='House Chart'>IMA HOUSE CHART</Tab>
       </Tabs>

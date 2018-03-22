@@ -23,7 +23,7 @@ export default class App extends Component {
         </Appbar>
         <Container>
           { this.state.results.length > 0
-            ? <Results mothers={this.state.results} />
+            ? <Results mothers={this.state.results} quesited={this.state.house} />
             : <Generate generate={results => this.setState({ results })}
               changeHouse={house => this.setState({ house })} />
           }
