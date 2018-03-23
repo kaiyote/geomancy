@@ -1,33 +1,41 @@
 import React, { Component } from 'react'
-import { Col, Row } from 'muicss/react'
 import Figure from './Figure.js'
+import Info from './Info.js'
 
 export default class ShieldChart extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {}
+
+    this.setState = this.setState.bind(this)
+  }
+
   render () {
     return (
       <div className='chart'>
-        <Row>
-          {this.props.daughters.reverse().map((d, i) => (
-            <Col md='1' md-offset={i === 0 ? '2' : '0'} key={i} className='figure daughter'><Figure figure={d} /></Col>
+        <div className='row'>
+          {this.props.mothers.map((m, i) => (
+            <Figure figure={m} key={i} index={i + 1} className='mother' onHover={this.setState} />
           ))}
-          {this.props.mothers.reverse().map((m, i) => (
-            <Col md='1' key={i} className='figure mother'><Figure figure={m} /></Col>
+          {this.props.daughters.map((d, i) => (
+            <Figure figure={d} key={i} index={i + 1} className='daughter' onHover={this.setState} />
           ))}
-        </Row>
-        <Row>
-          {this.props.nieces.reverse().map((n, i) => (
-            <Col md='2' md-offset={i === 0 ? '2' : '0'} key={i} className='figure niece'><Figure figure={n} /></Col>
+        </div>
+        <div className='row'>
+          {this.props.nieces.map((n, i) => (
+            <Figure figure={n} key={i} index={i + 1} className='niece' onHover={this.setState} />
           ))}
-        </Row>
-        <Row>
-          {this.props.witnesses.reverse().map((w, i) => (
-            <Col md='4' md-offset={i === 0 ? '2' : '0'} key={i} className='figure witness'><Figure figure={w} /></Col>
+        </div>
+        <div className='row'>
+          {this.props.witnesses.map((w, i) => (
+            <Figure figure={w} key={i} index={i + 1} className='witness' onHover={this.setState} />
           ))}
-        </Row>
-        <Row className='judge-row'>
-          <Col md='6' md-offset='3' className='figure judge'><Figure figure={this.props.judge} /></Col>
-          <Col md='1' md-offset='1' className='figure reconciler'><Figure figure={this.props.reconciler} /></Col>
-        </Row>
+        </div>
+        <div className='row'>
+          <Figure figure={this.props.reconciler} className='reconciler' onHover={this.setState} />
+          <Figure figure={this.props.judge} className='judge' onHover={this.setState} />
+          <Info data={this.state.data} />
+        </div>
       </div>
     )
   }
