@@ -203,5 +203,126 @@ export default [
     deities: ['Mercurius', 'Ceres'],
     angels: ['Raphael', 'Hamaliel'],
     bodyParts: ['Intestines', 'Digestive System']
+  },
+  {
+    name: 'Acquisitio',
+    translation: 'Gain',
+    meaning: 'Good for all situations except where loss is desireable. Something is within ones grasp.',
+    value: 5,
+    rulingElement: {
+      geomantic: 'Air',
+      astrological: 'Fire'
+    },
+    stable: true,
+    entering: true,
+    impartial: true,
+    planets: ['Jupiter (Diurnal)'],
+    sign: 'Sagittarius',
+    intelligences: ['Iophiel'],
+    spirits: ['Hismael'],
+    deities: ['Jove', 'Diana'],
+    angels: ['Sachiel', 'Adnachiel'],
+    bodyParts: ['Hips', 'Thighs']
+  },
+  {
+    name: 'Rubeus',
+    translation: 'Red',
+    meaning: 'Inversion. Good in all that is evil, and evil in all that is good. Very bad in all situations.',
+    value: 4,
+    rulingElement: {
+      geomantic: 'Air',
+      astrological: 'Water'
+    },
+    mobile: true,
+    exiting: true,
+    partial: true,
+    planets: ['Mars (Nocturnal)'],
+    sign: 'Scorpio',
+    intelligences: ['Graphiel'],
+    spirits: ['Bartzabel'],
+    deities: ['Mavors'],
+    angels: ['Samael', 'Barbiel'],
+    bodyParts: ['Reproductive System', 'Excratory System', 'Genitals']
+  },
+  {
+    name: 'Fortuna Major',
+    translation: 'The Greater Fortune',
+    meaning: 'Good in all situations. A figure of stability and long-term success. Also denotes hardship at the outset of the endeavor.',
+    value: 3,
+    rulingElement: {
+      geomantic: 'Earth',
+      astrological: 'Fire'
+    },
+    stable: true,
+    entering: true,
+    impartial: true,
+    planets: ['Sun (Diurnal)'],
+    sign: 'Leo',
+    intelligences: ['Nakhiel'],
+    spirits: ['Sorath'],
+    deities: ['Apollo', 'Jupiter'],
+    angels: ['Michael', 'Verchiel'],
+    bodyParts: ['Heart', 'Chest']
+  },
+  {
+    name: 'Albus',
+    translation: 'White',
+    meaning: 'Good in most situations, especially in the company of other positive figures, but is weak by itself. Benefits situations where careful planning is needed.',
+    value: 2,
+    rulingElement: {
+      geomantic: 'Water',
+      astrological: 'Air'
+    },
+    stable: true,
+    entering: true,
+    partial: true,
+    planets: ['Mercury (Diurnal)'],
+    sign: 'Gemini',
+    intelligences: ['Tiriel'],
+    spirits: ['Taphthartharath'],
+    deities: ['Mercurius', 'Apollo'],
+    angels: ['Raphael', 'Ambriel'],
+    bodyParts: ['Shoulders', 'Lungs']
+  },
+  {
+    name: 'Tristitia',
+    translation: 'Sorrow',
+    meaning: 'Unfavourable in almost all questions, usually representing pain and suffering. However, it is favourable in questions dealing with stability, building, or the Earth (agriculture).',
+    value: 1,
+    rulingElement: {
+      geomantic: 'Earth',
+      astrological: 'Air'
+    },
+    stable: true,
+    entering: true,
+    partial: true,
+    planets: ['Saturn (Diurnal)'],
+    sign: 'Aquarius',
+    intelligences: ['Agiel'],
+    spirits: ['Zazel'],
+    deities: ['Saeturnus', 'Juno'],
+    angels: ['Cassiel', 'Gabriel'],
+    bodyParts: ['Ankles', 'Lower Legs']
+  },
+  {
+    name: 'Populus',
+    translation: 'The People',
+    meaning: 'A neutral figure, good with good, and bad with bad. Can mean that the outcome is based on the people in the situation, or represents a large number of people.',
+    value: 0,
+    rulingElement: {
+      geomantic: 'Water',
+      astrological: 'Water'
+    },
+    stable: true,
+    entering: true,
+    exiting: true,
+    impartial: true,
+    planets: ['Moon (Diurnal)'],
+    sign: 'Cancer',
+    intelligences: ['Chashmodai', 'Malkah be-Tarshishim ve-ad Ruachoth Chechalim'],
+    spirits: ['Shad Barshemoth ha-Shartathan'],
+    deities: ['Diana', 'Mercurius'],
+    angels: ['Gabriel', 'Muriel'],
+    bodyParts: ['Breasts', 'Torso']
   }
 ]
