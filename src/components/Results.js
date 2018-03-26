@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Tab, Tabs } from 'muicss/react'
 import ShieldChart from './ShieldChart.js'
+import HouseChart from './HouseChart.js'
 
 export default class Results extends Component {
   constructor (props) {
@@ -31,7 +32,12 @@ export default class Results extends Component {
             judge={this.state.judge} reconciler={this.state.reconciler}
             quesited={this.props.quesited} />
         </Tab>
-        <Tab label='House Chart'>IMA HOUSE CHART</Tab>
+        <Tab label='House Chart'>
+          <HouseChart mothers={this.state.mothers}
+            daughters={this.state.daughters}
+            nieces={this.state.nieces}
+            quesited={this.props.quesited} />
+        </Tab>
       </Tabs>
     )
   }

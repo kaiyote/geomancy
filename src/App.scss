@@ -11,6 +11,16 @@
   }
 }
 
+.house-background {
+  width: 600px;
+
+  g {
+    stroke: $mui-primary-color;
+    fill: transparent;
+    stroke-width: 0.02;
+  }
+}
+
 .app-title {
   @extend .mui--text-display3;
   @extend .mui--appbar-height;
@@ -28,6 +38,11 @@
   text-align: center;
   line-height: .9em;
   background-color: white;
+
+  .house & {
+    border: none;
+    font-size: 1.2em;
+  }
 
   span {
     margin: 0 5px;
@@ -50,8 +65,7 @@
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    max-width: 600px;
-    min-width: 600px;
+    width: 600px;
 
     & > * {
       flex-grow: 1;
@@ -64,4 +78,78 @@
       }
     }
   }
+}
+
+.wrapper {
+  position: relative;
+}
+
+@each $type in mother, daughter, niece {
+  @each $position in 0,1,2,3 {
+    .#{$type}#{$position} {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.mother0 {
+  top: 41.5%;
+  left: 11.5%;
+}
+
+.mother1 {
+  top: 66.5%;
+  left: 3%;
+}
+
+.mother2 {
+  top: 81.5%;
+  left: 19.75%;
+}
+
+.mother3 {
+  top: 76%;
+  left: 44.75%;
+}
+
+.daughter0 {
+  top: 81.5%;
+  left: 69.75%;
+}
+
+.daughter1  {
+  top: 66.5%;
+  left: 86.5%;
+}
+
+.daughter2 {
+  top: 41.5%;
+  left: 78%;
+}
+
+.daughter3 {
+  top: 17%;
+  left: 86.5%;
+}
+
+.niece0 {
+  top: 1.5%;
+  left: 69.75%;
+}
+
+.niece1 {
+  top: 7.5%;
+  left: 44.75%;
+}
+
+.niece2 {
+  top: 1.5%;
+  left: 19.75%;
+}
+
+.niece3 {
+  top: 17%;
+  left: 3%;
 }
