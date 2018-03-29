@@ -62,7 +62,9 @@ export default class Manual extends Component {
   formControl (mother, part, elemIndex) {
     return (
       <FormControl>
-        <InputLabel htmlFor={`mother${mother}${part}`}>{part.replace(/^(.)(.+)$/, (_, p1, p2) => `${p1.toUpperCase()}${p2}`)}</InputLabel>
+        <InputLabel htmlFor={`mother${mother}${part}`}>
+          {part.replace(/^(.)(.+)$/, (_, p1, p2) => `${p1.toUpperCase()}${p2}`)}
+        </InputLabel>
         <Input
           value={this.state[`mother${mother}`][part]}
           onChange={e => this.onChange(e, mother, part)}
