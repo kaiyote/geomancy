@@ -5,6 +5,7 @@ import { withStyles } from 'material-ui/styles'
 import { Input } from './tabs'
 import logo from './logo.svg'
 import withRoot from './withRoot.js'
+import { recombine, add } from './util/Figure.js'
 
 const styles = {
   logo: {
@@ -19,8 +20,8 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      results: [],
-      house: 4,
+      mothers: [],
+      house: 0,
       activeTab: 0
     }
   }
@@ -36,16 +37,27 @@ class App extends Component {
               onChange={(e, v) => this.setState({activeTab: v})}
               centered style={{flexGrow: 1}}>
               <Tab label='Input' />
-              <Tab label='House Chart' disabled={this.state.results.length === 0} />
-              <Tab label='Shield Chart' disabled={this.state.results.length === 0} />
+              <Tab label='House Chart' disabled={this.state.mothers.length === 0} />
+              <Tab label='Shield Chart' disabled={this.state.mothers.length === 0} />
             </Tabs>
           </Toolbar>
         </AppBar>
-        {this.state.activeTab === 0 && <Input generate={data => this.setState({results: data})} />}
+        {this.state.activeTab === 0 && <Input generate={data => this.generate(data)} handleHouse={house => this.setState({house})} />}
         {this.state.activeTab === 1 && <Typography component='div'>SHIELD TAB</Typography>}
         {this.state.activeTab === 2 && <Typography component='div'>HOUSE TAB</Typography>}
       </React.Fragment>
     )
+  }
+
+  generate (data) {
+    let mothers = data
+    let daughters = ['fire', 'air', 'water', 'earth'].map(e => recombine(data, e))
+    let nieces = add(mothers.concat(daughters))
+    let witnesses = add(nieces)
+    let judge = add(witnesses)[0]
+    let reconciler = add([judge, mothers[0]])[0]
+
+    this.setState({ mothers, daughters, nieces, witnesses, judge, reconciler })
   }
 }
 

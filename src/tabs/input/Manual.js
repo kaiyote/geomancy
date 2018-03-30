@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, FormControl, Grid, InputLabel, Input, Typography } from 'material-ui'
+import { Button, Grid, TextField, Typography } from 'material-ui'
 
 export default class Manual extends Component {
   constructor (props) {
@@ -35,11 +35,11 @@ export default class Manual extends Component {
   render () {
     return (
       <form onSubmit={e => this.generate(e)}>
-        <Grid container justify='center' style={{marginTop: '30px'}}>
-          <Grid item xs={2} zeroMinWidth><Typography>Mother One</Typography></Grid>
-          <Grid item xs={2} zeroMinWidth><Typography>Mother Two</Typography></Grid>
-          <Grid item xs={2} zeroMinWidth><Typography>Mother Three</Typography></Grid>
-          <Grid item xs={2} zeroMinWidth><Typography>Mother Four</Typography></Grid>
+        <Grid container justify='center'>
+          <Grid item xs={2} zeroMinWidth><Typography margin='normal'>Mother One</Typography></Grid>
+          <Grid item xs={2} zeroMinWidth><Typography margin='normal'>Mother Two</Typography></Grid>
+          <Grid item xs={2} zeroMinWidth><Typography margin='normal'>Mother Three</Typography></Grid>
+          <Grid item xs={2} zeroMinWidth><Typography margin='normal'>Mother Four</Typography></Grid>
         </Grid>
         {['fire', 'air', 'water', 'earth'].map((i, ix) => (
           <Grid container key={i} justify='center'>
@@ -51,8 +51,10 @@ export default class Manual extends Component {
           </Grid>
         ))}
         <Grid container justify='center' style={{marginTop: '30px'}}>
-          <Grid item xs={2}>
-            <Button type='submit' color='primary' variant='raised' onClick={e => this.generate(e)}>Generate Charts</Button>
+          <Grid item xs={6}>
+            <Button type='submit' color='primary' variant='raised' onClick={e => this.generate(e)} fullWidth>
+              Generate Charts
+            </Button>
           </Grid>
         </Grid>
       </form>
@@ -61,17 +63,9 @@ export default class Manual extends Component {
 
   formControl (mother, part, elemIndex) {
     return (
-      <FormControl>
-        <InputLabel htmlFor={`mother${mother}${part}`}>
-          {part.replace(/^(.)(.+)$/, (_, p1, p2) => `${p1.toUpperCase()}${p2}`)}
-        </InputLabel>
-        <Input
-          value={this.state[`mother${mother}`][part]}
-          onChange={e => this.onChange(e, mother, part)}
-          id={`mother${mother}${part}`}
-          type='number'
-          inputProps={{tabIndex: (4 * mother) - (4 - elemIndex) + 1}} />
-      </FormControl>
+      <TextField label={part.replace(/^(.)(.+)$/, (_, p1, p2) => `${p1.toUpperCase()}${p2}`)}
+        value={this.state[`mother${mother}`][part]} onChange={e => this.onChange(e, mother, part)}
+        type='number' inputProps={{tabIndex: (4 * mother) - (4 - elemIndex) + 1}} margin='normal' />
     )
   }
 
