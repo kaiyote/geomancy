@@ -1,11 +1,11 @@
+import { withStyles } from '@material-ui/core/styles'
+import { AppBar, Avatar, Tab, Tabs, Toolbar, Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
-import { AppBar, Avatar, Tab, Tabs, Toolbar, Typography } from 'material-ui'
-import { withStyles } from 'material-ui/styles'
-import { Input } from './tabs'
 import logo from './logo.svg'
+import { Input } from './tabs'
+import { add, recombine } from './util/Figure.js'
 import withRoot from './withRoot.js'
-import { recombine, add } from './util/Figure.js'
 
 const styles = {
   logo: {
@@ -34,15 +34,15 @@ class App extends Component {
             <Avatar alt='logo' src={logo} className={this.props.classes.logo} />
             <Typography variant='display1' color='inherit'>Geomancy</Typography>
             <Tabs value={this.state.activeTab}
-              onChange={(e, v) => this.setState({activeTab: v})}
-              centered style={{flexGrow: 1}}>
+              onChange={(e, v) => this.setState({ activeTab: v })}
+              centered style={{ flexGrow: 1 }}>
               <Tab label='Input' />
               <Tab label='House Chart' disabled={this.state.mothers.length === 0} />
               <Tab label='Shield Chart' disabled={this.state.mothers.length === 0} />
             </Tabs>
           </Toolbar>
         </AppBar>
-        {this.state.activeTab === 0 && <Input generate={data => this.generate(data)} handleHouse={house => this.setState({house})} />}
+        {this.state.activeTab === 0 && <Input generate={data => this.generate(data)} handleHouse={house => this.setState({ house })} />}
         {this.state.activeTab === 1 && <Typography component='div'>SHIELD TAB</Typography>}
         {this.state.activeTab === 2 && <Typography component='div'>HOUSE TAB</Typography>}
       </React.Fragment>

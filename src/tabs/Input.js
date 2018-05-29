@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Paper, Tab, Tabs, TextField, Typography } from 'material-ui'
+import { Grid, Paper, Tab, Tabs, TextField, Typography } from '@material-ui/core'
 import { Manual } from './input/'
 import { Houses } from '../data'
 

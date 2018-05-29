@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Grid, TextField, Typography } from 'material-ui'
+import { Button, Grid, TextField, Typography } from '@material-ui/core'
 
 export default class Manual extends Component {
   constructor (props) {
