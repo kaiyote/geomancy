@@ -1,11 +1,19 @@
+import {
+  AppBar,
+  Avatar,
+  Tab,
+  Tabs,
+  Toolbar,
+  Typography
+} from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { AppBar, Avatar, Tab, Tabs, Toolbar, Typography } from '@material-ui/core'
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
 import logo from './logo.svg'
-import { Input } from './tabs'
+import { Input, House } from './tabs'
 import { add, recombine } from './util/Figure.js'
 import withRoot from './withRoot.js'
+import { TabGroup } from './controls'
 
 const styles = {
   logo: {
@@ -33,25 +41,41 @@ class App extends Component {
           <Toolbar>
             <Avatar alt='logo' src={logo} className={this.props.classes.logo} />
             <Typography variant='display1' color='inherit'>Geomancy</Typography>
-            <Tabs value={this.state.activeTab}
-              onChange={(e, v) => this.setState({ activeTab: v })}
-              centered style={{ flexGrow: 1 }}>
+            <Tabs
+              value={this.state.activeTab}
+              onChange={(_, v) => this.setState({ activeTab: v })}
+              centered
+              style={{ flexGrow: 1 }}
+            >
               <Tab label='Input' />
-              <Tab label='House Chart' disabled={this.state.mothers.length === 0} />
-              <Tab label='Shield Chart' disabled={this.state.mothers.length === 0} />
+              <Tab
+                label='House Chart'
+                disabled={this.state.mothers.length === 0}
+              />
+              <Tab
+                label='Shield Chart'
+                disabled={this.state.mothers.length === 0}
+              />
             </Tabs>
           </Toolbar>
         </AppBar>
-        {this.state.activeTab === 0 && <Input generate={data => this.generate(data)} handleHouse={house => this.setState({ house })} />}
-        {this.state.activeTab === 1 && <Typography component='div'>SHIELD TAB</Typography>}
-        {this.state.activeTab === 2 && <Typography component='div'>HOUSE TAB</Typography>}
+        <TabGroup index={this.state.activeTab}>
+          <Input
+            generate={data => this.generate(data)}
+            handleHouse={house => this.setState({ house })}
+          />
+          <House {...this.state} />
+          <Typography component='div'>SHIELD TAB</Typography>
+        </TabGroup>
       </React.Fragment>
     )
   }
 
   generate (data) {
     let mothers = data
-    let daughters = ['fire', 'air', 'water', 'earth'].map(e => recombine(data, e))
+    let daughters = ['fire', 'air', 'water', 'earth'].map(e =>
+      recombine(data, e)
+    )
     let nieces = add(mothers.concat(daughters))
     let witnesses = add(nieces)
     let judge = add(witnesses)[0]
