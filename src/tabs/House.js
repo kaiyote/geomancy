@@ -98,7 +98,10 @@ class House extends Component {
               onHover={this.setState}
             />
           ))}
-          <Info data={this.state.data} className={`${classes.info}`} />
+          <Info data={this.state.data} className={`${classes.info}`}>
+            {`[name] ([translation])
+              [meaning]`}
+          </Info>
         </div>
       </div>
     )

@@ -119,7 +119,10 @@ class Shield extends Component {
             />
           </div>
         </div>
-        <Info data={this.state.data} />
+        <Info data={this.state.data}>
+          {`[label]: [name] ([translation])
+            [meaning]`}
+        </Info>
       </React.Fragment>
     )
   }
