@@ -1,4 +1,5 @@
 import House from './House.js'
 import Input from './Input.js'
+import Shield from './Shield.js'
 
-export { House, Input }
+export { House, Input, Shield }

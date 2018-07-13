@@ -10,7 +10,7 @@ import { withStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import { hot } from 'react-hot-loader'
 import logo from './logo.svg'
-import { Input, House } from './tabs'
+import { Input, House, Shield } from './tabs'
 import { add, recombine } from './util/Figure.js'
 import withRoot from './withRoot.js'
 import { TabGroup } from './controls'
@@ -65,7 +65,7 @@ class App extends Component {
             handleHouse={house => this.setState({ house })}
           />
           <House {...this.state} />
-          <Typography component='div'>SHIELD TAB</Typography>
+          <Shield {...this.state} />
         </TabGroup>
       </React.Fragment>
     )
