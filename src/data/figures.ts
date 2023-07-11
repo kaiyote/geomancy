@@ -1,6 +1,32 @@
 // source: https://en.wikipedia.org/wiki/Geomantic_figures
+export type Element
+  = 'Fire'
+  | 'Air'
+  | 'Water'
+  | 'Earth'
 
-export default [
+export interface Figure {
+  name: string
+  translation: string
+  meaning: string
+  value: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15
+  rulingElement: Record<'geomantic' | 'astrological', Element>
+  stable?: boolean
+  mobile?: boolean
+  exiting?: boolean
+  entering?: boolean
+  impartial?: boolean
+  partial?: boolean
+  planets: string[]
+  sign: string
+  intelligences: string[]
+  spirits: string[]
+  deities: string[]
+  angels: string[]
+  bodyParts: string[]
+}
+
+export const Figures: Figure[] = [
   {
     name: 'Via',
     translation: 'The Way',
@@ -26,7 +52,7 @@ export default [
     name: 'Cauda Draconis',
     translation: 'The Tail of the Dragon',
     meaning: 'Very bad in most situations, but good for endings or completing things. Brings good with evil, and evil with good.',
-    value: 14,
+    value: 7,
     rulingElement: {
       geomantic: 'Fire',
       astrological: 'Fire'
@@ -66,7 +92,7 @@ export default [
     name: 'Fortuna Minor',
     translation: 'The Lesser Fortune',
     meaning: 'A weakly positive outcome in nearly all questions. Transient success that is dependent on outside help. Favors situations that resolve quickly and do not need to be sustained.',
-    value: 12,
+    value: 3,
     rulingElement: {
       geomantic: 'Fire',
       astrological: 'Fire'
@@ -106,7 +132,7 @@ export default [
     name: 'Amissio',
     translation: 'Loss',
     meaning: 'Bad in all situations except for love, or where loss is desired. Resolution is outside your grasp.',
-    value: 10,
+    value: 5,
     rulingElement: {
       geomantic: 'Fire',
       astrological: 'Earth'
@@ -147,7 +173,7 @@ export default [
     name: 'Laetitia',
     translation: 'Joy',
     meaning: 'Positive for nearly all questions, representing fast resolution and construction.',
-    value: 8,
+    value: 1,
     rulingElement: {
       geomantic: 'Fire',
       astrological: 'Water'
@@ -167,7 +193,7 @@ export default [
     name: 'Caput Draconis',
     translation: 'The Head of the Dragon',
     meaning: 'Good with good, evil with evil. Good for starting or beginning new things.',
-    value: 7,
+    value: 14,
     rulingElement: {
       geomantic: 'Earth',
       astrological: 'Fire'
@@ -208,7 +234,7 @@ export default [
     name: 'Acquisitio',
     translation: 'Gain',
     meaning: 'Good for all situations except where loss is desireable. Something is within ones grasp.',
-    value: 5,
+    value: 10,
     rulingElement: {
       geomantic: 'Air',
       astrological: 'Fire'
@@ -228,7 +254,7 @@ export default [
     name: 'Rubeus',
     translation: 'Red',
     meaning: 'Inversion. Good in all that is evil, and evil in all that is good. Very bad in all situations.',
-    value: 4,
+    value: 2,
     rulingElement: {
       geomantic: 'Air',
       astrological: 'Water'
@@ -248,7 +274,7 @@ export default [
     name: 'Fortuna Major',
     translation: 'The Greater Fortune',
     meaning: 'Good in all situations. A figure of stability and long-term success. Also denotes hardship at the outset of the endeavor.',
-    value: 3,
+    value: 12,
     rulingElement: {
       geomantic: 'Earth',
       astrological: 'Fire'
@@ -268,7 +294,7 @@ export default [
     name: 'Albus',
     translation: 'White',
     meaning: 'Good in most situations, especially in the company of other positive figures, but is weak by itself. Benefits situations where careful planning is needed.',
-    value: 2,
+    value: 4,
     rulingElement: {
       geomantic: 'Water',
       astrological: 'Air'
@@ -288,7 +314,7 @@ export default [
     name: 'Tristitia',
     translation: 'Sorrow',
     meaning: 'Unfavourable in almost all questions, usually representing pain and suffering. However, it is favourable in questions dealing with stability, building, or the Earth (agriculture).',
-    value: 1,
+    value: 8,
     rulingElement: {
       geomantic: 'Earth',
       astrological: 'Air'

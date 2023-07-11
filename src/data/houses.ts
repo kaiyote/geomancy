@@ -1,4 +1,10 @@
-export default [
+export interface House {
+  number: number
+  title: string
+  topics: string[]
+}
+
+export const Houses: House[] = [
   {
     number: 1,
     title: 'Life',
