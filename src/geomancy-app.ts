@@ -1,8 +1,8 @@
 import { LitElement, type TemplateResult, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import './components'
 import { when } from 'lit/directives/when.js'
-import { GenerateEventDetail } from './components'
+import './components'
+import { type GenerateEventDetail } from './components'
 
 /**
  * The root app element
@@ -19,20 +19,13 @@ export class GeomancyApp extends LitElement {
     return html`
       ${when(
         this.mothers != null && this.house != null && this.houseQuestionIndex != null,
-        () => html`
-          <geomancy-shield .mothers=${this.mothers!} .house=${this.house!} .houseQuestionIndex=${this.houseQuestionIndex!}></geomancy-shield>
-        `,
-        () => html`
-          <geomancy-input @generate=${this.generate}></geomancy-input>
-        `)
-      }
+        () => html`<geomancy-shield .mothers=${this.mothers!} .house=${this.house!} .houseQuestionIndex=${this.houseQuestionIndex!}></geomancy-shield>`,
+        () => html`<geomancy-input @generate=${this.generate}></geomancy-input>`
+      )}
     `
   }
 
   generate ({ detail }: CustomEvent<GenerateEventDetail>): void {
-    console.log(detail)
-
-    debugger
     this.mothers = detail.mothers
     this.house = detail.house
     this.houseQuestionIndex = detail.topicIndex
@@ -44,17 +37,6 @@ export class GeomancyApp extends LitElement {
       margin: 0 auto;
       padding: 2rem;
       text-align: center;
-    }
-
-
-    @media (prefers-color-scheme: light) {
-      a:hover {
-        color: #747bff;
-      }
-
-      button {
-        background-color: #f9f9f9;
-      }
     }
   `
 }
