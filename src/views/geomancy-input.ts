@@ -4,7 +4,7 @@ import { map } from 'lit/directives/map.js'
 import { range } from 'lit/directives/range.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { when } from 'lit/directives/when.js'
-import { type GeomancyInputRow, type GeomancyFigureSelector } from '.'
+import { type GeomancyInputRow, type GeomancyFigureSelector } from '../components'
 import { Houses } from '../data'
 
 export interface GenerateEventDetail {
@@ -42,7 +42,7 @@ export class GeomancyInput extends LitElement {
           ${repeat(GeomancyInput.options, i => i.value, i => html`<option value=${i.value}>${i.display}</option>`)}
         </select>
         <h3>How would you like to generate the mothers?</h3>
-        <span class='method-row'>
+        <geomancy-radio-row>
           <label>
             <input type="radio" name="generationMethod" ?checked=${this.manual} @change=${() => { this.manual = true }} />
             Manually generate by casting points
@@ -51,14 +51,14 @@ export class GeomancyInput extends LitElement {
             <input type="radio" name="generationMethod" ?checked=${!this.manual} @change=${() => { this.manual = false }} />
             Select the figures (you generated the mothers yourself elsewhere)
           </label>
-        </span>
-        ${when(this.manual, this.manualGeneration.bind(this), this.selectionGeneration.bind(this))}
+        </geomancy-radio-row>
+        ${when(this.manual, this.manualGeneration, this.selectionGeneration)}
         <input type='submit' value='Generate'>
       </form>
     `
   }
 
-  private manualGeneration (): unknown {
+  private manualGeneration = () => {
     return html`
       <h3>Click each of the 16 rows to generate the mothers. Try to click at least 12 times in each row, but also try not to count your clicks.</h3>
       ${map(range(16), () => html`<geomancy-input-row></geomancy-input-row>`)}
@@ -66,7 +66,7 @@ export class GeomancyInput extends LitElement {
     `
   }
 
-  private selectionGeneration (): unknown {
+  private selectionGeneration = () => {
     return html`
       <h3>Specify the mothers you generated elsewhere.</h3>
       <span class='selector-row'>
@@ -127,7 +127,6 @@ export class GeomancyInput extends LitElement {
       color: red;
     }
 
-    span.method-row,
     span.selector-row {
       display: flex;
       align-items: center;

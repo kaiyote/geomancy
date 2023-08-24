@@ -17,7 +17,7 @@ export class GeomancyFigure extends LitElement {
   }
 
   protected render (): unknown {
-    return map(range(4), i => html`<div aria-hidden="true">${map(range(1, getBit(i, this.value) - 1, -1), () => html`<span>◆</span>`)}</div>`)
+    return map(range(4), i => html`<div aria-hidden="true" part="bit-${i}">${map(range(1, getBit(i, this.value) - 1, -1), () => html`<span>◆</span>`)}</div>`)
   }
 
   static styles = css`
@@ -28,7 +28,7 @@ export class GeomancyFigure extends LitElement {
       align-items: center;
       font-size: 1rem;
       line-height: 1rem;
-      margin: 1rem;
+      padding: 1rem;
     }
 
     :host > div {
